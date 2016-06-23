@@ -1,0 +1,10 @@
+packages/
+storage/
+compile-cache/
+blob-store/
+.node-gyp/
+.apm/
+.apmrc
+nohup.out
+projects.cson
+config.cson

@@ -1,0 +1,12 @@
+'atom-text-editor.vim-mode:not(.insert-mode)':
+  'ctrl-f': 'find-and-replace:show'
+  'ctrl-d': 'find-and-replace:select-next'
+'atom-text-editor.vim-mode.normal-mode':
+  'ctrl-v': 'core:paste'
+'atom-text-editor.vim-mode':
+  'ctrl-c': 'core:copy'
+'atom-text-editor.vim-mode.normal-mode':
+  'ctrl-r': 'symbols-view:toggle-file-symbols'
+'body':
+  'ctrl-q': 'unset!'
+  'ctrl-i': 'window:toggle-invisibles'
