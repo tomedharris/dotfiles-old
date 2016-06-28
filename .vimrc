@@ -24,10 +24,10 @@ set t_Co=256            " yes I use a 256 color terminal
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
-set foldenable          " enable folding
-set foldlevelstart=10   " open most folds by default
-set foldnestmax=10      " 10 nested fold max
-set foldmethod=indent   " fold based on indent level
+" set foldenable          " enable folding
+" set foldlevelstart=10   " open most folds by default
+" set foldnestmax=10      " 10 nested fold max
+" set foldmethod=indent   " fold based on indent level
 
 " -- Movement --
 " move vertically by visual line
