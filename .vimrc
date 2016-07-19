@@ -18,7 +18,7 @@ set hlsearch            " highlight matches
 
 colorscheme solarized   " The terminal scheme should also be solarized
 set background=dark     " dark UI
-set t_Co=256            " yes I use a 256 color terminal
+"set t_Co=256            " yes I use a 256 color terminal
 
 " show whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
