@@ -5,8 +5,10 @@ set guicursor+=a:blinkon0
 
 " Overriding the default font for Linux
 if has("gui_gtk2")
-  set guifont=Source\ Code\ Pro\ for\ Powerline\ Semibold\ 11
+  set guifont=Source\ Code\ Pro\ for\ Powerline\ Semibold\ 10
   set background=dark
+  map <silent> <F11>
+  \  :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 endif
 
 " Overriding the default font for Mac
@@ -24,14 +26,10 @@ if has("gui_gtk2")
   set toolbariconsize=tiny
 endif
 
-" Disable the toolbar
-set guioptions-=T
-
-" Disable the menubar
-set guioptions-=m
-
-" Disable the scroll bar
-set guioptions-=r
+set guioptions-=T " Disable the toolbar
+set guioptions-=m " Disable the menubar
+set guioptions-=r " Disable the right scroll bar
+set guioptions-=L " Disable the left scroll bar
 
 " Change the window size
 set lines=36

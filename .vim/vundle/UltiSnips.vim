@@ -4,5 +4,7 @@ if exists("g:vundle_install_plugin")
 
     " Set ultisnips triggers
     let g:UltiSnipsExpandTrigger="<Leader>s"
+    let g:UltiSnipsJumpForwardTrigger="<tab>"
+    let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
   endif
 endif
