@@ -1,0 +1,16 @@
+{
+    "folders":
+    [
+        {
+            "path": "."
+        }
+    ],
+    "SublimeLinter": {
+        "linters": {
+            "phpcs": {
+                "--standard": "psr-2"
+            }
+        }
+    }
+}
+
