@@ -16,9 +16,9 @@ set showmatch           " highlight matchi block delimiter
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
-colorscheme badwolf     " The terminal scheme should also be solarized
 set background=dark     " dark UI
-"set t_Co=256           " yes I use a 256 color terminal
+set t_Co=256            " yes I use a 256 color terminal
+colorscheme badwolf     " The terminal scheme should also be solarized
 
 " show whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
