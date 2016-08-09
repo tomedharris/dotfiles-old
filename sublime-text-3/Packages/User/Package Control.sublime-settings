@@ -7,7 +7,6 @@
 	[
 		"All Autocomplete",
 		"Boxy Theme",
-		"Color Highlighter",
 		"CSScomb",
 		"DocBlockr",
 		"GitGutter",
@@ -20,8 +19,10 @@
 		"SideBarEnhancements",
 		"Status Bar Time",
 		"SublimeLinter",
+		"SublimeLinter-jshint",
 		"SublimeLinter-php",
 		"SublimeLinter-phpcs",
+		"TrailingSpaces",
 		"Whitespace"
 	]
 }

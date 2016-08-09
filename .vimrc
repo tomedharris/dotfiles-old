@@ -17,8 +17,10 @@ set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
 set background=dark     " dark UI
-set t_Co=256            " yes I use a 256 color terminal
-colorscheme badwolf     " The terminal scheme should also be solarized
+
+if $TERM == "xterm-256color"
+    set t_Co=256            " yes I use a 256 color terminal
+endif
 
 " show whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -57,6 +59,9 @@ nnoremap <leader>u :GundoToggle<CR>
 command RemoveWhiteSpace :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl
 cabbrev rws RemoveWhiteSpace
 
+" Compile sass
+command Sassc :!sass % %:h/%:t:r.css
+
 " map :W to :w
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 
@@ -67,7 +72,7 @@ imap <c-s> <esc>:w<cr>a
 " allow sass file treatment for .scss files
 au BufRead,BufNewFile *.scss set filetype=scss.css
 
-" invisialbles
+" invisibles
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
