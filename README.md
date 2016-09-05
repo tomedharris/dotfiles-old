@@ -12,4 +12,3 @@ case $- in *i*)
 esac
 
 ```
-
