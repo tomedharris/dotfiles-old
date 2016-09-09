@@ -57,7 +57,9 @@ nnoremap <leader>u :GundoToggle<CR>
 
 " Remove whitespace
 command RemoveWhiteSpace :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl
-cabbrev rws RemoveWhiteSpace
+cnoreabbrev rws RemoveWhiteSpace
+
+cnoreabbrev vres vertical resize
 
 " Compile sass
 command Sassc :!sass % %:h/%:t:r.css
