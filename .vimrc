@@ -17,6 +17,7 @@ set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
 set background=dark     " dark UI
+colorscheme badwolf
 
 if $TERM == "xterm-256color"
     set t_Co=256            " yes I use a 256 color terminal
