@@ -22,7 +22,7 @@ set background=dark     " dark UI
 colorscheme badwolf
 
 if $TERM == "xterm-256color"
-    set t_Co=256            " yes I use a 256 color terminal
+    set t_Co=256        " yes I use a 256 color terminal
 endif
 
 " show whitespace
@@ -80,6 +80,11 @@ au BufRead,BufNewFile *.scss set filetype=scss.css
 " invisibles
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
+
+" ========================================================================
+" Terminal mappings
+" ========================================================================
+tnoremap <Esc> <C-\><C-n>
 
 " ========================================================================
 " Vundle & plugins config
