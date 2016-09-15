@@ -5,9 +5,11 @@ set tabstop=4           " number of visual spaces per tab
 set shiftwidth=4		" when indenting with '>', use 4 spaces width
 set expandtab 			" tabs are spaces
 
-set backspace=2         " Make backspace work like other apps
+set backspace=2         " make backspace work more naturally to me
 set mouse=a             " use mouse
 set number 			    " show line numbers
+
+set splitright          " vertical splits open on the right
 
 filetype indent on      " load filetype-specific indent files
 set wildmenu            " visual autocomplete for command menu
@@ -79,9 +81,9 @@ au BufRead,BufNewFile *.scss set filetype=scss.css
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
-" ==============================================================================
+" ========================================================================
 " Vundle & plugins config
-" ==============================================================================
+" ========================================================================
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -116,21 +118,21 @@ for file in split(glob('~/.vim/vundle/*.vim'), '\n')
     exe 'source' file
 endfor
 
-" ==============================================================================
+" ========================================================================
 " End vundle
-" ==============================================================================
+" ========================================================================
 
-" ==============================================================================
+" ========================================================================
 " Functions
-" ==============================================================================
+" ========================================================================
 
 for file in split(glob('~/.vim/functions/*.vim'), '\n')
     exe 'source' file
 endfor
 
-" ==============================================================================
+" ========================================================================
 " End functions
-" ==============================================================================
+" ========================================================================
 
 set exrc                            " enable per-directory .vimrc files
 set secure                          " disable unsafe commands in local .vimrc files
