@@ -14,7 +14,7 @@ set splitright          " vertical splits open on the right
 filetype indent on      " load filetype-specific indent files
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to
-set showmatch           " highlight matchi block delimiter
+set showmatch           " highlight matching block delimiter
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 

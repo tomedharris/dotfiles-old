@@ -17,3 +17,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # PHP
 alias phpu='vendor/bin/phpunit'
 alias part='php artisan'
+
+# httpie
+alias https='http --default-scheme=https'
+alias python=python3

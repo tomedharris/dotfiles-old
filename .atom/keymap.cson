@@ -3,6 +3,7 @@
   'ctrl-d': 'find-and-replace:select-next'
 'atom-text-editor.vim-mode':
   'ctrl-c': 'core:copy'
+  'ctrl-shift-Z': 'core:redo'
 'atom-text-editor.vim-mode.normal-mode':
   'ctrl-v': 'core:paste'
   'ctrl-r': 'symbols-view:toggle-file-symbols'
