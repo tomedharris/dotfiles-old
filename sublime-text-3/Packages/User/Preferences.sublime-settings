@@ -1,8 +1,8 @@
 {
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
-	"font_size": 11,
+	"color_scheme": "Packages/ayu/ayu-light.tmTheme",
+	"font_size": 10,
 	"hot_exit": false,
 	"ignored_packages":
 	[
@@ -12,13 +12,14 @@
 		"draw_normal",
 		"draw_active"
 	],
-	"line_padding_bottom": 3,
-	"line_padding_top": 3,
-	"material_theme_small_tab": true,
+	"line_padding_bottom": 4,
+	"line_padding_top": 4,
 	"overlay_scroll_bars": "enabled",
 	"remember_open_files": false,
 	"tab_size": 2,
-	"theme": "Default.sublime-theme",
+	"theme": "ayu-light.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"vintage_start_in_command_mode": true
+	"vintage_start_in_command_mode": true,
+	"ui_fix_tab_labels":  true,
+	"rulers": [80, 120]
 }
