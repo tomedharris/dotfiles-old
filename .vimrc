@@ -70,10 +70,6 @@ command Sassc :!sass % %:h/%:t:r.css
 " map :W to :w
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 
-" map Ctrl-S to save
-nmap <c-s> :w<cr>
-imap <c-s> <esc>:w<cr>a
-
 " allow sass file treatment for .scss files
 au BufRead,BufNewFile *.scss set filetype=scss.css
 
