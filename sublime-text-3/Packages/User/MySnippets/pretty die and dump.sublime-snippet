@@ -1,7 +1,0 @@
-<snippet>
-  <content><![CDATA[
-echo '<pre>'; var_dump(${1:\$v}); echo '</pre>'; die();
-]]></content>
-	<tabTrigger>pdd</tabTrigger>
-	<scope>source.php</scope>
-</snippet>
