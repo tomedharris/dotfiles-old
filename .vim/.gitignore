@@ -1,5 +1,5 @@
-bundle/*
-!bundle/Vundle.vim
+bundle/
+plugged/
 tmp/
 backups/*
 !backups/.gitkeep

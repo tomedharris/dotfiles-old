@@ -85,44 +85,101 @@ if has('nvim')
 endif
 
 " ========================================================================
-" Vundle & plugins config
+" Plugins
 " ========================================================================
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" My plugins
-" Source all of the .vim files in ~/.vim/vundle directory
-" install plugins.
-let g:vundle_install_plugin = 1
-for file in split(glob('~/.vim/vundle/*.vim'), '\n')
-    exe 'source' file
-endfor
-unlet g:vundle_install_plugin
+call plug#begin('~/.vim/plugged')
 
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+Plug 'mileszs/ack.vim'
+Plug 'xsbeats/vim-blade'
+Plug 'vim-scripts/BufOnly.vim'
+Plug 'csscomb/vim-csscomb'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'groenewege/vim-less'
+Plug 'fatih/vim-go'
+Plug 'leafo/moonscript-vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'shawncplus/phpcomplete.vim'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'evidens/vim-twig'
+
+Plug 'SirVer/ultisnips'
+    let g:UltiSnipsExpandTrigger="<Leader>s"
+    let g:UltiSnipsJumpForwardTrigger="<tab>"
+    let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+Plug 'kien/ctrlp.vim'
+    map <C-p> :CtrlP<cr>
+
+Plug 'Raimondi/delimitMate'
+    let delimitMate_expand_cr = 1
+    let g:delimitMate_expand_space = 1
+
+Plug 'airblade/vim-gitgutter'
+    let g:gitgutter_sign_modified = '┄'
+
+
+Plug 'Xuyuanp/nerdtree-git-plugin'
+    let g:NERDTreeIndicatorMapCustom = {
+        \ "Modified"  : "✹",
+        \ "Staged"    : "✚",
+        \ "Untracked" : "✭",
+        \ "Renamed"   : "➜",
+        \ "Unmerged"  : "═",
+        \ "Deleted"   : "✖",
+        \ "Dirty"     : "✗",
+        \ "Clean"     : "✔︎",
+        \ "Unknown"   : "?"
+        \ }
+    let g:NERDTreeMinimalUI = 1
+
+Plug 'taiansu/nerdtree-ag'
+    nnoremap <Leader>n :NERDTreeToggle<CR>
+    nnoremap <Leader>f :NERDTreeFind<CR>
+    let NERDTreeChDirMode=1
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+Plug 'tobyS/pdv'
+    let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+    nnoremap <Leader>pd :call pdv#DocumentWithSnip()<CR>
+
+Plug 'scrooloose/syntastic'
+    let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+    let g:syntastic_php_phpcs_args = "--standard=psr2"
+    let g:syntastic_php_phpmd_post_args = "codesize,design,unusedcode,naming"
+    let g:syntastic_javascript_checkers = ['jsl']
+
+Plug 'joonty/vdebug'
+    let g:vdebug_options = {
+    \    'break_on_open': 0,
+    \    'continuous_mode': 1
+    \  }
+    set laststatus=2
+    let g:airline_powerline_fonts = 1
+    let g:airline_theme = 'distinguished'
+
+Plug 'embear/vim-localvimrc'
+    let g:localvimrc_ask = 0
+
+Plug 'tobyS/vmustache'
+    call plug#end()
 
 filetype plugin indent on    " required
 
-
-" Config my plugins
-" Source all of the .vim files in ~/.vim/vimrc.d/vundle directory
-" config plugins.
-for file in split(glob('~/.vim/vundle/*.vim'), '\n')
-    exe 'source' file
-endfor
-
 " ========================================================================
-" End vundle
+" End Plugins
 " ========================================================================
 
 " ========================================================================
