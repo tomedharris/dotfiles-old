@@ -1,4 +1,4 @@
-bundle/
+autoload/
 plugged/
 tmp/
 backups/*

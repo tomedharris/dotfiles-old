@@ -13,7 +13,6 @@ set splitright          " vertical splits open on the right
 
 filetype indent on      " load filetype-specific indent files
 set wildmenu            " visual autocomplete for command menu
-set lazyredraw          " redraw only when we need to
 set showmatch           " highlight matching block delimiter
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
@@ -25,9 +24,20 @@ if $TERM == "xterm-256color"
     set t_Co=256        " yes I use a 256 color terminal
 endif
 
-" show whitespace
+" show trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
+let s:activatedhltrailingws = 1
+function! ToggleHighlightTrailingWhitespace()
+    if s:activatedhltrailingws == 0
+        let s:activatedhltrailingws = 1
+        match ExtraWhitespace /\s\+$/
+    else
+        let s:activatedhltrailingws = 0
+        match ExtraWhitespace /^---------- YES OK THIS SUCKS ----------$/
+    endif
+endfunction
+nnoremap <leader>k :call ToggleHighlightTrailingWhitespace()<CR>
+call ToggleHighlightTrailingWhitespace()
 
 " set foldenable          " enable folding
 " set foldlevelstart=10   " open most folds by default
@@ -112,8 +122,19 @@ Plug 'shawncplus/phpcomplete.vim'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'evidens/vim-twig'
+Plug 'wesQ3/vim-windowswap'
+Plug 'joonty/vdebug'
+
+Plug 'brookhong/DBGPavim'
+    let g:dbgPavimOnce = 1
+    let g:dbgPavimBreakAtEntry = 1
+
+Plug 'majutsushi/tagbar'
+    nmap <Leader>t :TagbarToggle<CR>
+
+Plug 'Shougo/neocomplete.vim'
+    let g:neocomplete#enable_at_startup = 1
 
 Plug 'SirVer/ultisnips'
     let g:UltiSnipsExpandTrigger="<Leader>s"
@@ -126,6 +147,11 @@ Plug 'kien/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
     let delimitMate_expand_cr = 1
     let g:delimitMate_expand_space = 1
+
+Plug 'vim-airline/vim-airline-themes'
+    set laststatus=2
+    let g:airline_powerline_fonts = 1
+    let g:airline_theme = 'distinguished'
 
 Plug 'airblade/vim-gitgutter'
     let g:gitgutter_sign_modified = '┄'
@@ -152,7 +178,7 @@ Plug 'taiansu/nerdtree-ag'
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 Plug 'tobyS/pdv'
-    let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+    let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
     nnoremap <Leader>pd :call pdv#DocumentWithSnip()<CR>
 
 Plug 'scrooloose/syntastic'
@@ -160,15 +186,6 @@ Plug 'scrooloose/syntastic'
     let g:syntastic_php_phpcs_args = "--standard=psr2"
     let g:syntastic_php_phpmd_post_args = "codesize,design,unusedcode,naming"
     let g:syntastic_javascript_checkers = ['jsl']
-
-Plug 'joonty/vdebug'
-    let g:vdebug_options = {
-    \    'break_on_open': 0,
-    \    'continuous_mode': 1
-    \  }
-    set laststatus=2
-    let g:airline_powerline_fonts = 1
-    let g:airline_theme = 'distinguished'
 
 Plug 'embear/vim-localvimrc'
     let g:localvimrc_ask = 0
