@@ -1,0 +1,4 @@
+#!/bin/bash
+# Create a git commit with format `WIP ...`
+
+git add . && git commit -m "WIP $*"

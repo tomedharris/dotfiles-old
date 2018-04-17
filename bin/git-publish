@@ -1,0 +1,4 @@
+#!/bin/bash
+# Publish branch to origin with current branch name
+
+git push -u origin $(git rev-parse --abbrev-ref HEAD)

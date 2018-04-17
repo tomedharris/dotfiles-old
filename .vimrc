@@ -24,7 +24,7 @@ if $TERM == "xterm-256color"
     set t_Co=256        " yes I use a 256 color terminal
 endif
 
-set termguicolors
+" set termguicolors
 
 " show trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -141,15 +141,15 @@ Plug 'brookhong/DBGPavim'
 Plug 'majutsushi/tagbar'
     nmap <Leader>t :TagbarToggle<CR>
 
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
-    let g:neocomplete#enable_at_startup = 1
-    let g:deoplete#enable_at_startup = 1
+" if has('nvim')
+"    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"    Plug 'Shougo/deoplete.nvim'
+"    Plug 'roxma/nvim-yarp'
+"    Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+"    let g:neocomplete#enable_at_startup = 1
+"    let g:deoplete#enable_at_startup = 1
 
 Plug 'SirVer/ultisnips'
     let g:UltiSnipsExpandTrigger="<Leader>s"
