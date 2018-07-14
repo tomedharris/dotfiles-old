@@ -21,3 +21,12 @@ alias part='php artisan'
 # httpie
 alias https='http --default-scheme=https'
 alias python=python3
+
+# Docker compose
+alias dceu='docker-compose exec --user=${UID}'
+alias dce='docker-compose exec'
+alias dcl='docker-compose logs -f'
+alias dcdu='docker-compose down && docker-compose up -d'
+alias dcu='docker-compose up -d'
+
+
