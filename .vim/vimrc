@@ -110,54 +110,14 @@ call plug#begin('~/.vim/plugged')
 
 
 Plug 'mileszs/ack.vim'
-Plug 'xsbeats/vim-blade'
-Plug 'vim-scripts/BufOnly.vim'
-Plug 'csscomb/vim-csscomb'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'groenewege/vim-less'
-Plug 'fatih/vim-go'
-Plug 'leafo/moonscript-vim'
-Plug 'scrooloose/nerdcommenter'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
-Plug 'shawncplus/phpcomplete.vim'
-Plug 'honza/vim-snippets'
+    nnoremap <Leader>n :NERDTreeToggle<CR>
+    let NERDTreeChDirMode=1
+
 Plug 'tpope/vim-surround'
 Plug 'bling/vim-airline'
-Plug 'evidens/vim-twig'
-Plug 'wesQ3/vim-windowswap'
-
-Plug 'joonty/vdebug'
-let g:vdebug_options= {
-\    "timeout" : 60,
-\    "on_close" : 'stop',
-\    "break_on_open" : 0,
-\}
-
-Plug 'brookhong/DBGPavim'
-    let g:dbgPavimOnce = 1
-    let g:dbgPavimBreakAtEntry = 1
-
-Plug 'majutsushi/tagbar'
-    nmap <Leader>t :TagbarToggle<CR>
-
-" if has('nvim')
-"    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" else
-"    Plug 'Shougo/deoplete.nvim'
-"    Plug 'roxma/nvim-yarp'
-"    Plug 'roxma/vim-hug-neovim-rpc'
-" endif
-"    let g:neocomplete#enable_at_startup = 1
-"    let g:deoplete#enable_at_startup = 1
-
-Plug 'SirVer/ultisnips'
-    let g:UltiSnipsExpandTrigger="<Leader>s"
-    let g:UltiSnipsJumpForwardTrigger="<tab>"
-    let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 Plug 'kien/ctrlp.vim'
     map <C-p> :CtrlP<cr>
@@ -194,48 +154,12 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
         \ }
     let g:NERDTreeMinimalUI = 1
 
-Plug 'taiansu/nerdtree-ag'
-    nnoremap <Leader>n :NERDTreeToggle<CR>
-    nnoremap <Leader>f :NERDTreeFind<CR>
-    let NERDTreeChDirMode=1
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-Plug 'tobyS/pdv'
-    let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
-    nnoremap <Leader>pd :call pdv#DocumentWithSnip()<CR>
-
-Plug 'scrooloose/syntastic'
-    let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-    let g:syntastic_php_phpcs_args = "--standard=psr2"
-    let g:syntastic_php_phpmd_post_args = "codesize,design,unusedcode,naming"
-    let g:syntastic_javascript_checkers = ['jsl']
-
-Plug 'embear/vim-localvimrc'
-    let g:localvimrc_ask = 0
-
-Plug 'tobyS/vmustache'
-
-Plug 'ludovicchabant/vim-gutentags'
-
-Plug 'rking/ag.vim'
-    call plug#end()
+call plug#end()
 
 filetype plugin indent on    " required
 
 " ========================================================================
 " End Plugins
-" ========================================================================
-
-" ========================================================================
-" Functions
-" ========================================================================
-
-for file in split(glob('~/.vim/functions/*.vim'), '\n')
-    exe 'source' file
-endfor
-
-" ========================================================================
-" End functions
 " ========================================================================
 
 set exrc                            " enable per-directory .vimrc files
