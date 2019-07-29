@@ -18,13 +18,12 @@ set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
 set background=dark     " dark UI
-colorscheme badwolf
 
-if $TERM == "xterm-256color"
-    set t_Co=256        " yes I use a 256 color terminal
-endif
+"if $TERM == "xterm-256color"
+"    set t_Co=256
+"endif
 
-" set termguicolors
+set termguicolors
 
 " show trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -109,6 +108,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'mileszs/ack.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-fugitive'
+Plug 'nightsense/snow'
 Plug 'scrooloose/nerdtree'
     nnoremap <Leader>n :NERDTreeToggle<CR>
     let NERDTreeChDirMode=1
@@ -126,7 +126,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'vim-airline/vim-airline-themes'
     set laststatus=2
     let g:airline_powerline_fonts = 1
-    let g:airline_theme = 'distinguished'
+    let g:airline_theme = 'snow_dark'
 
 Plug 'airblade/vim-gitgutter'
     let g:gitgutter_sign_modified = '┄'
@@ -157,3 +157,5 @@ filetype plugin indent on    " required
 set exrc                            " enable per-directory .vimrc files
 set secure                          " disable unsafe commands in local .vimrc files
 set directory=$HOME/.vim/backups/   " Default directory for backups
+
+colorscheme zellner
